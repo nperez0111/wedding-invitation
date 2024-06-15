@@ -1,43 +1,15 @@
 /** @jsx jsx */
 /** @jsxImportSource hono/jsx */
-import type { FC } from "hono/jsx";
 
-export const Layout: FC = (props) => {
-  return (
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + React + TS</title>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossorigin=""
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap"
-          rel="stylesheet"
-        />
-        <link href="/public/output.css" rel="stylesheet" />
-      </head>
-      <body>{props.children}</body>
-    </html>
-  );
-};
+import type { FC } from "hono/jsx";
 
 export const Page: FC = () => {
   return (
     <div class="relative mx-auto w-full bg-sky-100 px-4 py-12">
-      <div class="relative mx-auto max-w-[700px] rounded-3xl shadow-lg">
+      <div class="relative mx-auto max-w-[700px] cursor-default rounded-3xl border-2 border-sky-100 shadow-lg">
         <div class="absolute inset-0 rounded-3xl bg-black"></div>
         <video
-          class="absolute left-0 right-0 z-0 h-full rounded-3xl opacity-[90%] shadow-lg"
+          class="absolute left-0 right-0 z-0 h-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
           autoPlay
           loop
           muted
@@ -46,7 +18,6 @@ export const Page: FC = () => {
           }}
         >
           <source src="/public/video-bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
         {/* <div
@@ -59,7 +30,7 @@ export const Page: FC = () => {
             }}
           /> */}
         <div class="relative p-8">
-          <div class="rounded-lg border-4 border-sky-50 p-4 lg:p-8">
+          <div class="rounded-lg border-4 border-sky-100 p-4 lg:p-8">
             <div class="mb-8 mt-2 text-center font-semibold text-sky-50 drop-shadow-md lg:mb-16">
               <div class="text-sm uppercase tracking-wider">
                 Together with <br /> their families
@@ -127,16 +98,16 @@ export const Page: FC = () => {
                 <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
                   RSVP by 1st of August
                 </p>
-                <button
-                  onClick={() => {
-                    window.prompt("Enter your name to RSVP");
-                  }}
-                  class="inline-flex items-center justify-center rounded-md border-2 border-sky-50 bg-transparent px-10 py-2 text-sm font-bold tracking-widest text-sky-50 shadow transition-colors hover:bg-sky-50/90 hover:text-sky-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                >
-                  RSVP
-                </button>
+                <form action="/rsvp-details" method="get">
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center rounded-md border-2 border-sky-50 bg-transparent px-10 py-2 text-sm font-bold tracking-widest text-sky-50 shadow transition-colors hover:bg-sky-50/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    RSVP
+                  </button>
+                </form>
                 <p class="md:text-md mt-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                  Contact: <a href="tel:13052828358">(305) 280-8903</a>
+                  Contact: <a href="tel:123456789">(123) 456 7890</a>
                 </p>
               </div>
             </div>
