@@ -1,41 +1,32 @@
-/** @jsx jsx */
-/** @jsxImportSource hono/jsx */
-import { Database } from "bun:sqlite";
+// @ts-expect-error - TS doesn't know about the bun:sqlite import
+import dbInstance from "./db/db.sqlite" with { type: "sqlite" };
+import type { Database } from "bun:sqlite";
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
-import { Page } from "./home-page";
 import type { FC } from "hono/jsx";
 import { html } from "hono/html";
 
-const db = new Database("db.sqlite");
+import { HomePage } from "./home-page";
+
+const db: Database = dbInstance;
 
 db.exec("PRAGMA journal_mode = WAL;");
-db.query(
-  "CREATE TABLE IF NOT EXISTS rsvps (name text, createdAt text, email text);",
-).run();
+db.query("CREATE TABLE IF NOT EXISTS rsvps (name text, createdAt text);").run();
 
 type RSVP = {
   name: string;
   createdAt: string;
-  email: string;
 };
 
 const insertRsvp = db.prepare<
   RSVP,
-  { $name: RSVP["name"]; $createdAt: RSVP["name"]; $email: RSVP["email"] }
->(
-  "INSERT INTO rsvps (name, createdAt, email) values ($name, $createdAt, $email);",
-);
+  { $name: RSVP["name"]; $createdAt: RSVP["name"] }
+>("INSERT INTO rsvps (name, createdAt) values ($name, $createdAt);");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const query = db.prepare<RSVP, any[]>("select * from rsvps;");
 
 const app = new Hono();
-
-type RsvpSubmission = {
-  name: string;
-  email?: string;
-};
 
 export const Layout: FC = (props) =>
   html`<!doctype html>
@@ -82,7 +73,7 @@ export const Layout: FC = (props) =>
           : ""}
       </head>
       <body>
-        ${props.children}
+        ${props["children"]}
       </body>
     </html>`;
 
@@ -94,11 +85,10 @@ app.get("/healthcheck", (c) => c.text(time));
 app.get("/", (c) =>
   c.html(
     <Layout>
-      <Page />
+      <HomePage />
     </Layout>,
   ),
 );
-app.get("/rsvp-details", (c) => c.html(<Layout>Hey how are you?</Layout>));
 
 app.use(
   "/public/*",
@@ -111,18 +101,20 @@ app.use(
   }),
 );
 
-app.post("/api/rsvp", async (c) => {
+app.post("/rsvp", async (c) => {
   const time = new Date().toISOString();
+  const name = (await c.req.formData()).get("name");
 
-  const submission = await c.req.json<RsvpSubmission>();
+  const names = Array.isArray(name) ? name : [name];
 
-  insertRsvp.run({
-    $name: submission.name,
-    $createdAt: time,
-    $email: submission.email || "",
+  names.forEach((name) => {
+    insertRsvp.run({
+      $name: name,
+      $createdAt: time,
+    });
   });
 
-  return c.json({ time });
+  return c.html(<Layout>Thank you for RSVPing {names.join(" ")}!</Layout>);
 });
 
 app.get("/api/rsvps", async (c) => {
@@ -130,6 +122,7 @@ app.get("/api/rsvps", async (c) => {
   return c.json(rsvps);
 });
 
+console.log("Server starting on port 2500");
 export default {
   fetch: app.fetch,
   port: 2500,
