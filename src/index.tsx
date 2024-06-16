@@ -1,14 +1,19 @@
-// @ts-expect-error - TS doesn't know about the bun:sqlite import
-import dbInstance from "./db/db.sqlite" with { type: "sqlite" };
-import type { Database } from "bun:sqlite";
+import { Database } from "bun:sqlite";
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import type { FC } from "hono/jsx";
 import { html } from "hono/html";
+import { resolve, dirname } from "node:path";
+import { mkdir, exists } from "node:fs/promises";
 
 import { HomePage } from "./home-page";
 
-const db: Database = dbInstance;
+const path = resolve(process.cwd(), "db/db.sqlite");
+const doesPathExist = await exists(path);
+if (!doesPathExist) {
+  await mkdir(dirname(path), {});
+}
+const db = new Database(path, { create: true });
 
 db.exec("PRAGMA journal_mode = WAL;");
 db.query("CREATE TABLE IF NOT EXISTS rsvps (name text, createdAt text);").run();
