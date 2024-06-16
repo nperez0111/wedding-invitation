@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "seed:db": "bun run ./src/initialize.js",
     "dev": "concurrently --kill-others \"bun run dev:backend\" \"bun run dev:css\"",
     "dev:backend": "bun run --watch ./src/index.tsx",
     "dev:css": "tailwindcss -i ./src/index.css -o ./public/output.css --watch",
