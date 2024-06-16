@@ -9,7 +9,7 @@
     "dev:css": "tailwindcss -i ./src/index.css -o ./public/output.css --watch",
     "build:css": "tailwindcss -i ./src/index.css -o ./public/output.css",
     "pre:build": "bun run build:css",
-    "build": "bun build src/index.tsx --outfile=server.js --format esm --minify",
+    "build": "bun build src/index.tsx --outfile=server.js --format esm",
     "test": "echo \"Error: no test specified\"",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
