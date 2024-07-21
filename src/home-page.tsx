@@ -4,7 +4,7 @@ import type { FC } from "hono/jsx";
 export const HomePage: FC = () => {
   return (
     <div class="relative mx-auto w-full px-4 py-12">
-      <div class="animate-fade-up animate-once animate-ease-in-out animate-delay-300 relative mx-auto max-w-[700px] cursor-default rounded-3xl border-2 border-sky-100 shadow-lg">
+      <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-sky-100 shadow-lg animate-delay-300 animate-once animate-ease-in-out">
         <div class="relative z-10 p-8">
           <div class="rounded-lg border-4 border-sky-50 p-4 lg:p-8">
             <div class="mb-8 mt-2 text-center font-semibold text-sky-50 drop-shadow-md lg:mb-16">
@@ -87,7 +87,6 @@ export const HomePage: FC = () => {
             </div>
           </div>
         </div>
-        <div class="absolute inset-0 z-0 rounded-3xl bg-black"></div>
         <video
           class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
           autoPlay
@@ -100,6 +99,7 @@ export const HomePage: FC = () => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
+        <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-b from-black/40 to-black/40"></div>
       </div>
       <div
         class="relative z-10"
@@ -116,7 +116,7 @@ export const HomePage: FC = () => {
 
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-            <div class="animate-fade-up animate-ease-in-out animate-duration-100 relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+            <div class="relative transform animate-fade-up overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all animate-duration-100 animate-ease-in-out sm:my-8 sm:w-full sm:max-w-lg">
               <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <div class="flex items-center gap-4">
                   <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
