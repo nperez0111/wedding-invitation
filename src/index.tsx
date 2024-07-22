@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-expect-error - TS doesn't know about the bun:sqlite import
 import dbInstance from "./db/db.sqlite" with { type: "sqlite" };
 import type { Database } from "bun:sqlite";
@@ -25,9 +26,9 @@ const query = db.prepare<RSVP, any[]>("select * from rsvps;");
 
 const app = new Hono();
 
-export const Layout: FC = (props) =>
+export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
   html`<!doctype html>
-    <html lang="en">
+    <html lang="${props.isTurkish ? "tr" : "en"}">
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/public/icon.svg" />
@@ -79,13 +80,18 @@ app.get("/ping", (c) => c.text("pong"));
 const time = new Date().toISOString();
 app.get("/healthcheck", (c) => c.text(time));
 
-app.get("/", (c) =>
-  c.html(
-    <Layout>
-      <HomePage />
+app.get("/", (c) => {
+  const acceptLanguage = c.req.header("Accept-Language");
+  const turkishLang = c.req.query("lang") === "tr";
+  const isTurkish =
+    Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
+
+  return c.html(
+    <Layout isTurkish={isTurkish}>
+      <HomePage isTurkish={isTurkish} />
     </Layout>,
-  ),
-);
+  );
+});
 
 app.use(
   "/public/*",
@@ -102,6 +108,11 @@ app.post("/rsvp", async (c) => {
   const time = new Date().toISOString();
   const name = (await c.req.formData()).get("name");
 
+  const acceptLanguage = c.req.header("Accept-Language");
+  const turkishLang = c.req.query("lang") === "tr";
+  const isTurkish =
+    Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
+
   const names = Array.isArray(name) ? name : [name];
 
   names.forEach((name) => {
@@ -111,7 +122,11 @@ app.post("/rsvp", async (c) => {
     });
   });
 
-  return c.html(<Layout>Thank you for RSVPing {names.join(" ")}!</Layout>);
+  return c.html(
+    <Layout isTurkish={isTurkish}>
+      Thank you for RSVPing {names.join(" ")}!
+    </Layout>,
+  );
 });
 
 app.get("/api/rsvps", async (c) => {

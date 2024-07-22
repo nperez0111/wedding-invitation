@@ -1,15 +1,34 @@
 import { html, raw } from "hono/html";
 import type { FC } from "hono/jsx";
 
-export const HomePage: FC = () => {
+export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
     <div class="relative mx-auto w-full px-4 py-12">
       <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-sky-100 shadow-lg animate-delay-300 animate-once animate-ease-in-out">
+        <video
+          class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
+          autoPlay
+          loop
+          muted
+          playsinline
+          style={{
+            objectFit: "cover",
+          }}
+        >
+          <source src="/public/bg-video.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-b from-black/40 to-black/40"></div>
         <div class="relative z-10 p-8">
           <div class="rounded-lg border-4 border-sky-50 p-4 lg:p-8">
             <div class="mb-8 mt-2 text-center font-semibold text-sky-50 drop-shadow-md lg:mb-16">
               <div class="text-sm uppercase tracking-wider">
-                Together with <br /> their families
+                {isTurkish ? (
+                  <>UNUTMAYIN</>
+                ) : (
+                  <>
+                    Together with <br /> their families
+                  </>
+                )}
               </div>
             </div>
             <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
@@ -29,25 +48,47 @@ export const HomePage: FC = () => {
             <div class="text-center">
               <div class="my-6 md:my-12">
                 <p class="md:text-md font-sans text-sm uppercase tracking-widest text-sky-50 drop-shadow-md">
-                  Invite you to
-                  <br />
-                  celebrate their wedding
+                  {isTurkish ? (
+                    <>
+                      Aileleri ile birlikte sizi <br /> düğünlerine davet
+                      ediyorlar
+                    </>
+                  ) : (
+                    <>
+                      Invite you to
+                      <br />
+                      celebrate their wedding
+                    </>
+                  )}
                 </p>
               </div>
               <div>
-                <div class="font-serif text-2xl font-medium text-stone-100 drop-shadow-md">
-                  September
-                </div>
+                {isTurkish ? (
+                  <div class="font-serif text-2xl font-extrabold text-stone-100 drop-shadow-md md:text-5xl">
+                    7
+                  </div>
+                ) : (
+                  <div class="font-serif text-2xl font-medium text-stone-100 drop-shadow-md">
+                    September
+                  </div>
+                )}
                 <div class="mx-2 my-2 flex items-center md:mx-16">
                   <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
-                    Saturday
+                    {isTurkish ? "Cumartesi" : "Saturday"}
                   </div>
-                  <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-5xl">
-                    <span class="pr-1 font-extrabold">7</span>
-                    <span class="align-top text-lg">th</span>
-                  </div>
+
+                  {isTurkish ? (
+                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-2xl">
+                      <span class="pr-1 font-extrabold">Eylül</span>
+                    </div>
+                  ) : (
+                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-5xl">
+                      <span class="pr-1 font-extrabold">7</span>
+                      <span class="align-top text-lg">th</span>
+                    </div>
+                  )}
                   <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
-                    at 16:00
+                    {isTurkish ? "saat 16:30" : "at 16:30"}
                   </div>
                 </div>
               </div>
@@ -55,51 +96,70 @@ export const HomePage: FC = () => {
                 2024
               </div>
               <div class="my-8 md:my-12">
-                <p class="md:text-md font-serif text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                  Design Plus Seya Beach Hotel
-                  <br />
-                  Alacati, Turkey Mah. Cark Plaji
-                  <br />
-                  Mevkii, 8010. Sk., 35930 Izmir
-                </p>
+                {isTurkish ? (
+                  <a
+                    class="md:text-md cursor-pointer font-serif text-sm font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
+                    href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
+                  >
+                    Design Plus Seya Beach Hotel
+                    <br />
+                    Alaçatı, Türkiye Mah. Çark Plajı
+                    <br />
+                    Mevkii, 8010. Sk., 35930 İzmir
+                  </a>
+                ) : (
+                  <a
+                    class="md:text-md cursor-pointer font-serif text-sm font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
+                    href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
+                  >
+                    Design Plus Seya Beach Hotel
+                    <br />
+                    Alacati, Turkey Mah. Çark Plajı
+                    <br />
+                    Mevkii, 8010. Sk., 35930 İzmir
+                  </a>
+                )}
               </div>
               <div class="my-8 md:my-12">
-                <p class="md:text-md font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                  Dinner &amp; Dance
-                  <br />
-                  Address here 51st st
-                </p>
+                {isTurkish ? (
+                  <p class="md:text-md font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
+                    Akşam Yemeği <br />
+                    &amp;
+                    <br /> Kutlama
+                    <br />
+                  </p>
+                ) : (
+                  <p class="md:text-md font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
+                    Dinner <br />
+                    &amp;
+                    <br /> Celebration
+                  </p>
+                )}
               </div>
               <div class="my-8 md:my-12">
-                <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                  RSVP by 1st of August
-                </p>
+                {isTurkish ? (
+                  <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
+                    1 Ağustos'a kadar cevap verin
+                  </p>
+                ) : (
+                  <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
+                    RSVP by 1st of August
+                  </p>
+                )}
                 <button
                   id="rsvp"
-                  class="inline-flex items-center justify-center rounded-md border-2 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-600 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-sky-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-600 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-sky-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  RSVP
+                  {isTurkish ? "CEVAP VER" : "RSVP"}
                 </button>
                 <p class="md:text-md text-md mt-6 font-serif font-medium uppercase tracking-wide text-sky-50 drop-shadow-md">
-                  Contact: <a href="tel:123456789">(123) 456 7890</a>
+                  {isTurkish ? "İletişim" : "Contact"}:{" "}
+                  <a href="tel:123456789">(123) 456 7890</a>
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <video
-          class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
-          autoPlay
-          loop
-          muted
-          playsinline
-          style={{
-            objectFit: "cover",
-          }}
-        >
-          <source src="/public/bg-video.mp4" type="video/mp4" />
-        </video>
-        <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-b from-black/40 to-black/40"></div>
       </div>
       <div
         class="relative z-10"
@@ -126,7 +186,7 @@ export const HomePage: FC = () => {
                     class="text-base font-semibold leading-6 text-gray-900"
                     id="modal-title"
                   >
-                    RSVP Details
+                    {isTurkish ? "RSVP Detayları" : "RSVP Details"}
                   </h3>
                 </div>
                 <form
@@ -140,14 +200,19 @@ export const HomePage: FC = () => {
                         for="name0"
                         class="block text-sm font-medium leading-6 text-gray-900"
                       >
-                        Full Name (Person 1) <span class="text-red-900">*</span>
+                        {isTurkish
+                          ? "Tam İsim (Kişi 1)"
+                          : "Full Name (Person 1)"}{" "}
+                        <span class="text-red-900">*</span>
                       </label>
                       <div class="text-sm">
                         <button
                           id="add-person"
                           class="font-semibold text-cyan-600 hover:text-cyan-500"
                         >
-                          + Add another person
+                          {isTurkish
+                            ? "+ Başka kişi ekle"
+                            : "+ Add another person"}
                         </button>
                       </div>
                     </div>
@@ -169,7 +234,7 @@ export const HomePage: FC = () => {
                       type="submit"
                       class="flex w-full justify-center rounded-md bg-cyan-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
-                      Submit
+                      {isTurkish ? "Gönder" : "Submit"}
                     </button>
                   </div>
                 </form>
@@ -179,12 +244,12 @@ export const HomePage: FC = () => {
         </div>
       </div>
       {/* What a hack to get nice highlighting of interactive JS */}
-      <script>{html`(${raw(interactivity.toString())})(document)`}</script>
+      <script>{html`(${raw(interactivity.toString())})(document, ${isTurkish})`}</script>
     </div>
   );
 };
 
-function interactivity(document: Document) {
+function interactivity(document: Document, isTurkish: boolean) {
   const dialog = document.getElementById("dialog")!;
   // Open the dialog when clicking RSVP
   document.getElementById("rsvp")!.addEventListener("click", () => {
@@ -210,7 +275,7 @@ function interactivity(document: Document) {
           for="name${personCount}"
           class="block text-sm font-medium leading-6 text-gray-900"
         >
-          Full Name (Person ${personCount + 1})
+          ${isTurkish ? `Tam İsim (Kişi ${personCount + 1})` : `Full Name (Person ${personCount + 1})`}
         </label>
       </div>
       <div class="mt-2">
