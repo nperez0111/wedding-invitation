@@ -166,11 +166,11 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 <p class="text-md mt-6 font-serif font-medium uppercase tracking-wide text-sky-50 drop-shadow-md">
                   {isTurkish ? (
                     <>
-                      İletişim: <a href="tel:123456789">506 344 69 04</a>
+                      İletişim: <a href="tel:5063446904">506 344 69 04</a>
                     </>
                   ) : (
                     <>
-                      Contact: <a href="tel:123456789">(305) 280 8903</a>
+                      Contact: <a href="tel:7862808903">(786) 280 8903</a>
                     </>
                   )}
                 </p>
