@@ -3,7 +3,7 @@ import type { FC } from "hono/jsx";
 
 export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
-    <div class="relative mx-auto w-full px-4 py-12">
+    <div class="relative mx-auto w-full p-1 py-4 sm:px-4 md:py-12">
       <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-sky-100 shadow-lg animate-delay-300 animate-once animate-ease-in-out">
         <video
           class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
@@ -17,19 +17,15 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-b from-black/40 to-black/40"></div>
-        <div class="relative z-10 p-8">
-          <div class="rounded-lg border-4 border-sky-50 p-4 lg:p-8">
+        <div class="absolute inset-0 z-0 rounded-3xl bg-gradient-to-b from-black/40 to-black/50"></div>
+        <div class="relative z-10 p-4 sm:p-8">
+          <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
             <div class="mb-8 mt-2 text-center font-semibold text-sky-50 drop-shadow-md lg:mb-16">
-              <div class="text-sm uppercase tracking-wider">
-                {isTurkish ? (
-                  <>UNUTMAYIN</>
-                ) : (
-                  <>
-                    Together with <br /> their families
-                  </>
-                )}
-              </div>
+              {isTurkish ? null : (
+                <div class="text-sm uppercase tracking-wider">
+                  Together with <br /> their families
+                </div>
+              )}
             </div>
             <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
               <div class="flex-1 text-center font-cursive text-sky-50 drop-shadow-md">
@@ -72,14 +68,14 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     September
                   </div>
                 )}
-                <div class="mx-2 my-2 flex items-center md:mx-16">
+                <div class="mx-1 my-2 flex items-center md:mx-16">
                   <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
                     {isTurkish ? "Cumartesi" : "Saturday"}
                   </div>
 
                   {isTurkish ? (
-                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-2xl">
-                      <span class="pr-1 font-extrabold">Eylül</span>
+                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md">
+                      <span class="font-extrabold">Eylül</span>
                     </div>
                   ) : (
                     <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-5xl">
@@ -107,7 +103,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                   </a>
                 ) : (
                   <a
-                    class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
+                    class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 underline drop-shadow-md"
                     href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
                   >
                     Design Plus Seya Beach Hotel
@@ -115,17 +111,33 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     Alacati, Turkey
                   </a>
                 )}
+                <svg
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  height="14"
+                  stroke-linejoin="round"
+                  stroke-miterlimit="2"
+                  viewBox="0 0 64 64"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#FFF"
+                  class="mb-1 ml-1 inline-block"
+                >
+                  <path d="m-896 0h1280v800h-1280z" fill="none" />
+                  <path d="m36.026 20.058h-21.092c-1.65 0-2.989 1.339-2.989 2.989v25.964c0 1.65 1.339 2.989 2.989 2.989h26.024c1.65 0 2.989-1.339 2.989-2.989v-20.953h3.999v21.948c0 3.308-2.686 5.994-5.995 5.995h-28.01c-3.309 0-5.995-2.687-5.995-5.995v-27.954c0-3.309 2.686-5.995 5.995-5.995h22.085z" />
+                  <path d="m55.925 25.32h-4.005v-10.481l-27.894 27.893-2.832-2.832 27.895-27.895h-10.484v-4.005h17.318l.002.001z" />
+                </svg>
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
                   <p class="md:text-md font-sans text-sm font-medium uppercase leading-6 text-sky-50 drop-shadow-md">
-                    KOKTEYL 🍹: 19:00 <br />
-                    YEMEK 🥘: 20:00
+                    KOKTEYL 19:00 <br />
+                    YEMEK 20:00
                   </p>
                 ) : (
                   <p class="md:text-md font-sans text-sm font-medium uppercase leading-6 text-sky-50 drop-shadow-md">
-                    Cocktail 🍹: 19:00 <br />
-                    Dinner 🥘: 20:00
+                    Cocktail 19:00 <br />
+                    Dinner 20:00
                   </p>
                 )}
               </div>
@@ -170,17 +182,17 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
 
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-            <div class="relative transform animate-fade-up overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all animate-duration-100 animate-ease-in-out sm:my-8 sm:w-full sm:max-w-lg">
+            <div class="relative w-full transform animate-fade-up overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all animate-duration-100 animate-ease-in-out sm:my-8 sm:max-w-lg">
               <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <div class="flex items-center gap-4">
-                  <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                  <div class="mx-0 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:h-12 sm:w-12">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADk0lEQVR4nO2YV2sVQRiGH0UTUWOLXgjGBoINsYCiREWJRlAEScTyAyyIig0jeqEoIvaGwTsRG95YUMSIBWMsQSxgEsWCitgVW2LDwoR3ZbKc5Jw92d0TcB9YQva8883M7s73vTMQERERERERERrdgLnAIeAW8A74CXwHXgLFwDZgApBOAyQHuAD8Bv4keL0CVgMtaQAMAi5Zg/sCHAdmAcOA7kALIAPoDeQCq4CbVpvHQHaqJtAIWKhPxnm65v/mHmIMBUqsBxD6ZJoBRzQA8ylt1lNPhsZqb2K9ATIJCTPgM+r4LTDep7inFXMlIWCyzHl1+BzoE0NTrMsroxXXrJ3A2aPOngE9atG8lqarx9jtrbUSKEusjgbUoTso3VaP8TtaSSMwhgA/tLAnxdH2k/YXMMW6nwWUAleUit2s1kROEBCm0wfqZGOCbRZZGe0osFNP2qkbpu6YVNsG6AvsktZMfnBQEylU5zc8WgpjUz65KvkB2ZZYVf6r6w36Srae0vdaMlQ8OgCVGugoqwbNB84BFcBlYD3QiYBIA8o1CGMpkuWeYvQnRSzVACo8fFLXtJhtDivObFJAJ+CzBmBcbaJ8VJvW1r2ZuldECjiszs1fL9xRO2MGHTK1xsxa60mI5FiFz+R+L+xQ23Wu+7t1/xghkQ7cVacFSbQfablY285nWal4BiGwUp2VK2slwzXFWOa6P0f3K1X9A8PUiW+qsMN9+DQrtTuM5cPMGzM7S99Js7ae5nuuL/sUq9SVutNlWcxvH2TdfcVZpPd9OggwHuqRYu7VttihCbBfv/3SiUqyu8sazLO8jp+GbaBViwo1AXt7u0YTMb8/lM+yNZ5YrjXxOyDDlqt1ZwZ7Cmjl+n0EUGYZxyfAYnm0uHTQ4VixGv9U9Q2KHOvNuO2Loaky2lNrQubB3ga2aP9jrH47aatxBu9cL4CxBE8vJROzD6kr4UzWm3OOmGJd1ecBxUqL14EFHs+gwiQDmAisBU6qrr3XzvNiqgcX8d+RpmxSkuAGqqkW7dUGov/HFisjbCc+Gy29qcrx2FAP/U48bmcrLZtdkMAxj603MWpjoQ/6FS6LU8MH5Wrr6fidacrhjmUokqat9GOU3x399BD0+Zb+LDBO+mouuIpLlcua5FnHN7Eutz4/Af3UeujzYugvOxOpkr/ZBHSJ8cY6ax2UKUiVCtLmJPRdfdBnad3ckd4kpYiICGrnLwKXZ4kl3lZUAAAAAElFTkSuQmCC" />
                   </div>
                   <h3
                     class="text-base font-semibold leading-6 text-gray-900"
                     id="modal-title"
                   >
-                    {isTurkish ? "RSVP Detayları" : "RSVP Details"}
+                    {isTurkish ? "LCV Detayları" : "RSVP Details"}
                   </h3>
                 </div>
                 <form
