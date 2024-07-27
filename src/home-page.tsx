@@ -57,6 +57,11 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     </>
                   )}
                 </p>
+                {isTurkish ? (
+                  <p class="md:text-md mt-6 font-sans text-lg uppercase tracking-widest text-sky-50 drop-shadow-md">
+                    Perez & Tangil AİLELERİ
+                  </p>
+                ) : null}
               </div>
               <div>
                 {isTurkish ? (
@@ -84,7 +89,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     </div>
                   )}
                   <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
-                    {isTurkish ? "saat 16:30" : "at 16:30"}
+                    {isTurkish ? "saat 19:00" : "at 7:00PM"}
                   </div>
                 </div>
               </div>
@@ -158,9 +163,27 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 >
                   {isTurkish ? "LCV" : "RSVP"}
                 </button>
-                <p class="md:text-md text-md mt-6 font-serif font-medium uppercase tracking-wide text-sky-50 drop-shadow-md">
-                  {isTurkish ? "İletişim" : "Contact"}:{" "}
-                  <a href="tel:123456789">(123) 456 7890</a>
+                <p class="text-md mt-6 font-serif font-medium uppercase tracking-wide text-sky-50 drop-shadow-md">
+                  {isTurkish ? (
+                    <>
+                      İletişim: <a href="tel:123456789">506 344 69 04</a>
+                    </>
+                  ) : (
+                    <>
+                      Contact: <a href="tel:123456789">(305) 280 8903</a>
+                    </>
+                  )}
+                </p>
+                <p class="text-md mt-6 font-serif font-medium tracking-wide text-sky-50 drop-shadow-md">
+                  {isTurkish ? (
+                    <></>
+                  ) : (
+                    <>
+                      Please note: High heels with thin heels are not
+                      recommended <br /> as the deck has gaps between the
+                      boards.
+                    </>
+                  )}
                 </p>
               </div>
             </div>
