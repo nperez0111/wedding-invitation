@@ -25,6 +25,7 @@ const insertRsvp = db.prepare<
 const query = db.prepare<RSVP, any[]>("select * from rsvps;");
 
 const app = new Hono();
+const time = new Date().toISOString();
 
 export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
   html`<!doctype html>
@@ -55,7 +56,7 @@ export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nick & Bensu's Wedding</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="/public/output.css" rel="stylesheet" />
+        <link href="/public/output.css?refresh=${time}" rel="stylesheet" />
         <style>
           /* fallback */
           @font-face {
@@ -97,7 +98,6 @@ export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
 
 app.get("/ping", (c) => c.text("pong"));
 
-const time = new Date().toISOString();
 app.get("/healthcheck", (c) => c.text(time));
 
 app.get("/", (c) => {
