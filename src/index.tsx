@@ -158,9 +158,9 @@ app.post("/rsvp", async (c) => {
       </video>
       <div class="absolute bottom-0 mx-auto w-full p-1 py-4 sm:px-4 md:py-12">
         <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-slate-300 bg-sky-50 shadow-lg animate-delay-300 animate-once animate-ease-in-out">
-          <div class="relative z-10 p-4 sm:p-8">
-            <div class="rounded-2xl border-2 border-slate-400 p-4 lg:p-8">
-              <div class="my-1 text-center text-xl font-semibold text-slate-800 drop-shadow-md lg:mb-16">
+          <div class="relative z-10 p-4">
+            <div class="rounded-2xl border-2 border-slate-400 p-4">
+              <div class="my-1 text-center text-xl font-semibold text-slate-800 drop-shadow-md">
                 {isTurkish
                   ? "Teşekkür ederiz! Düğünde görüşmek üzere!"
                   : "We can't wait to celebrate with you!"}

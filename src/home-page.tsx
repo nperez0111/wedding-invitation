@@ -100,7 +100,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 {isTurkish ? (
                   <a
                     class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
-                    href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
+                    href="https://www.designplus-hotels.com/tr/seya-beach"
                   >
                     SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
                     <br />
@@ -109,7 +109,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 ) : (
                   <a
                     class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 underline drop-shadow-md"
-                    href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
+                    href="https://www.designplus-hotels.com/seya-beach"
                   >
                     Design Plus Seya Beach Hotel
                     <br />
