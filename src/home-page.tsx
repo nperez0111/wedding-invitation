@@ -176,12 +176,14 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 </p>
                 <p class="text-md mt-6 font-serif font-medium tracking-wide text-sky-50 drop-shadow-md">
                   {isTurkish ? (
-                    <></>
+                    <>
+                      Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
+                      ayakkabı giyilmemesini tavsiye ederiz.
+                    </>
                   ) : (
                     <>
-                      Please note: High heels with thin heels are not
-                      recommended <br /> as the deck has gaps between the
-                      boards.
+                      The wedding will be on a pier. <br /> We recommend that
+                      you do not wear high heels.
                     </>
                   )}
                 </p>
