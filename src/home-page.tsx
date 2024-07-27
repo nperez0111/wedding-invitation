@@ -232,7 +232,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                         class="block text-sm font-medium leading-6 text-gray-900"
                       >
                         {isTurkish
-                          ? "Tam İsim (Kişi 1)"
+                          ? "İsim Soyad (1. Kişi)"
                           : "Full Name (Person 1)"}{" "}
                         <span class="text-red-900">*</span>
                       </label>
@@ -306,7 +306,7 @@ function interactivity(document: Document, isTurkish: boolean) {
           for="name${personCount}"
           class="block text-sm font-medium leading-6 text-gray-900"
         >
-          ${isTurkish ? `Tam İsim (Kişi ${personCount + 1})` : `Full Name (Person ${personCount + 1})`}
+          ${isTurkish ? `İsim Soyad (${personCount + 1}. Kişi)` : `Full Name (Person ${personCount + 1})`}
         </label>
       </div>
       <div class="mt-2">
