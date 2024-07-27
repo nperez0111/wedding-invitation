@@ -144,7 +144,34 @@ app.post("/rsvp", async (c) => {
 
   return c.html(
     <Layout isTurkish={isTurkish}>
-      Thank you for RSVPing {names.join(" ")}!
+      <video
+        class="absolute bottom-0 left-0 right-0 top-0 z-0 h-full w-full"
+        autoPlay
+        loop
+        muted
+        playsinline
+        style={{
+          objectFit: "cover",
+        }}
+      >
+        <source src="/public/bg-video.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute bottom-0 mx-auto w-full p-1 py-4 sm:px-4 md:py-12">
+        <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-slate-300 bg-sky-50 shadow-lg animate-delay-300 animate-once animate-ease-in-out">
+          <div class="relative z-10 p-4 sm:p-8">
+            <div class="rounded-2xl border-2 border-slate-400 p-4 lg:p-8">
+              <div class="my-1 text-center text-xl font-semibold text-slate-800 drop-shadow-md lg:mb-16">
+                {isTurkish
+                  ? "Teşekkür ederiz! Düğünde görüşmek üzere!"
+                  : "We can't wait to celebrate with you!"}
+              </div>
+            </div>
+          </div>
+          <div class="mb-2 text-center font-semibold text-slate-800">
+            Made with ❤️ by Nick
+          </div>
+        </div>
+      </div>
     </Layout>,
   );
 });
@@ -155,6 +182,7 @@ app.get("/api/rsvps", async (c) => {
 });
 
 console.log("Server starting on port 2500");
+
 export default {
   fetch: app.fetch,
   port: 2500,
