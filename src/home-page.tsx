@@ -222,7 +222,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 </div>
                 <form
                   class="mt-4 w-full space-y-6"
-                  action="/rsvp"
+                  action={isTurkish ? "/rsvp?lang=tr" : "/rsvp"}
                   method="POST"
                 >
                   <div>
