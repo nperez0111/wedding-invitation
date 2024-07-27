@@ -30,13 +30,8 @@ RUN bun run build
 FROM base AS release
 COPY --from=prerelease /usr/src/app/server.js .
 COPY --from=prerelease /usr/src/app/public/ ./public
-RUN mkdir -p /usr/src/app/db
-
-# Set ownership and permissions for the db directory
-RUN chown -R bun:bun /usr/src/app/db
-RUN chmod -R 755 /usr/src/app/db
 
 # run the app
-USER bun
 EXPOSE 3000/tcp
+
 ENTRYPOINT [ "/bin/sh", "-c", "bun run server.js" ]
