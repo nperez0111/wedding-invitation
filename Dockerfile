@@ -30,7 +30,6 @@ RUN bun run build
 FROM base AS release
 COPY --from=prerelease /usr/src/app/server.js .
 COPY --from=prerelease /usr/src/app/public/ ./public
-RUN ls -la ./ && ls -la ./public
 RUN mkdir -p ./db
 
 # run the app
