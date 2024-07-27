@@ -39,4 +39,4 @@ RUN chmod -R 755 /usr/src/app/db
 # run the app
 USER bun
 EXPOSE 3000/tcp
-ENTRYPOINT [ "/bin/sh", "-c", "chown -R bun:bun /usr/src/app/db && bun run server.js" ]
+ENTRYPOINT [ "/bin/sh", "-c", "bun run server.js" ]
