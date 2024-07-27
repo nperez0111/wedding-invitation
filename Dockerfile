@@ -29,7 +29,7 @@ RUN bun run build
 # copy production dependencies and source code into final image
 FROM base AS release
 COPY --from=prerelease /usr/src/app/server.js .
-COPY --from=prerelease /usr/src/app/public ./public
+COPY --from=prerelease /usr/src/app/public/ ./public
 RUN mkdir -p ./db
 
 # run the app
