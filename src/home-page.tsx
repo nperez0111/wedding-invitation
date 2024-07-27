@@ -50,8 +50,8 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 <p class="md:text-md font-sans text-sm uppercase tracking-widest text-sky-50 drop-shadow-md">
                   {isTurkish ? (
                     <>
-                      Aileleri ile birlikte sizi <br /> düğünlerine davet
-                      ediyorlar
+                      BU ÖZEL GÜNÜMÜZDE SİZLERİ DE ARAMIZDA <br /> GÖRMEKTEN
+                      MUTLULUK DUYARIZ.
                     </>
                   ) : (
                     <>
@@ -98,59 +98,53 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               <div class="my-8 md:my-12">
                 {isTurkish ? (
                   <a
-                    class="md:text-md cursor-pointer font-serif text-sm font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
+                    class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
                     href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
                   >
-                    Design Plus Seya Beach Hotel
+                    SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
                     <br />
-                    Alaçatı, Türkiye Mah. Çark Plajı
-                    <br />
-                    Mevkii, 8010. Sk., 35930 İzmir
+                    ÇEŞME - İZMİR
                   </a>
                 ) : (
                   <a
-                    class="md:text-md cursor-pointer font-serif text-sm font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
+                    class="md:text-md text-md cursor-pointer font-serif font-medium uppercase text-sky-50 drop-shadow-md hover:underline"
                     href="https://maps.app.goo.gl/ZQhhR4u5ikQ2t7Ty6"
                   >
                     Design Plus Seya Beach Hotel
                     <br />
-                    Alacati, Turkey Mah. Çark Plajı
-                    <br />
-                    Mevkii, 8010. Sk., 35930 İzmir
+                    Alacati, Turkey
                   </a>
                 )}
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
-                  <p class="md:text-md font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                    Akşam Yemeği <br />
-                    &amp;
-                    <br /> Kutlama
-                    <br />
+                  <p class="md:text-md font-sans text-sm font-medium uppercase leading-6 text-sky-50 drop-shadow-md">
+                    KOKTEYL 🍹: 19:00 <br />
+                    YEMEK 🥘: 20:00
                   </p>
                 ) : (
-                  <p class="md:text-md font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                    Dinner <br />
-                    &amp;
-                    <br /> Celebration
+                  <p class="md:text-md font-sans text-sm font-medium uppercase leading-6 text-sky-50 drop-shadow-md">
+                    Cocktail 🍹: 19:00 <br />
+                    Dinner 🥘: 20:00
                   </p>
                 )}
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
                   <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                    1 Ağustos'a kadar cevap verin
+                    LCV: 25 AĞUSTOS 2024 tarihine kadar <br />
+                    lütfen katılım durumunuzu bildiriniz.
                   </p>
                 ) : (
                   <p class="md:text-md mb-6 font-sans text-sm font-medium uppercase text-sky-50 drop-shadow-md">
-                    RSVP by 1st of August
+                    RSVP by 25th of August
                   </p>
                 )}
                 <button
                   id="rsvp"
                   class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-600 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-sky-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  {isTurkish ? "CEVAP VER" : "RSVP"}
+                  {isTurkish ? "LCV" : "RSVP"}
                 </button>
                 <p class="md:text-md text-md mt-6 font-serif font-medium uppercase tracking-wide text-sky-50 drop-shadow-md">
                   {isTurkish ? "İletişim" : "Contact"}:{" "}

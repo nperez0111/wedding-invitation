@@ -31,6 +31,26 @@ export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
     <html lang="${props.isTurkish ? "tr" : "en"}">
       <head>
         <meta charset="UTF-8" />
+        <meta property="og:url" content="https://wedding.nickthesick.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Bensu & Nick's Wedding" />
+        <meta
+          property="og:description"
+          content="RSVP to Bensu & Nick's wedding"
+        />
+        <meta property="og:image" content="/public/preview.jpg" />
+        <meta name="twitter:card" content="/public/preview.jpg" />
+        <meta property="twitter:domain" content="wedding.nickthesick.com" />
+        <meta
+          property="twitter:url"
+          content="https://wedding.nickthesick.com"
+        />
+        <meta name="twitter:title" content="Bensu & Nick's Wedding" />
+        <meta
+          name="twitter:description"
+          content="RSVP to Bensu & Nick's wedding"
+        />
+        <meta name="twitter:image" content="/public/preview.jpg" />
         <link rel="icon" type="image/svg+xml" href="/public/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nick & Bensu's Wedding</title>
