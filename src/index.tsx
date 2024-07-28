@@ -100,17 +100,24 @@ app.get("/ping", (c) => c.text("pong"));
 
 app.get("/healthcheck", (c) => c.text(time));
 
+const TurkishPage = (
+  <Layout isTurkish={true}>
+    <HomePage isTurkish={true} />
+  </Layout>
+);
+const EnglishPage = (
+  <Layout isTurkish={false}>
+    <HomePage isTurkish={false} />
+  </Layout>
+);
+
 app.get("/", (c) => {
   const acceptLanguage = c.req.header("Accept-Language");
   const turkishLang = c.req.query("lang") === "tr";
   const isTurkish =
     Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
 
-  return c.html(
-    <Layout isTurkish={isTurkish}>
-      <HomePage isTurkish={isTurkish} />
-    </Layout>,
-  );
+  return c.html(isTurkish ? TurkishPage : EnglishPage);
 });
 
 app.use(
