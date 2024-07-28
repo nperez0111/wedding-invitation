@@ -3,186 +3,188 @@ import type { FC } from "hono/jsx";
 
 export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
-    <div class="relative mx-auto h-full w-full py-2 drop-shadow-xl sm:px-4 sm:py-4 md:py-12">
-      <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl shadow-lg animate-delay-300 animate-once animate-ease-in-out">
-        <video
-          class="absolute z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
-          autoPlay
-          loop
-          muted
-          playsinline
-          style={{
-            objectFit: "cover",
-          }}
-        >
-          <source src="/public/bg-video.mp4" type="video/mp4" />
-        </video>
-        <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-sky-50 bg-gradient-to-b from-slate-900/40 to-black/65 drop-shadow-md sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
-        <div class="relative z-10 p-4 sm:p-8">
-          <div class="p-4 lg:p-8">
-            <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
-              {isTurkish ? null : (
-                <div class="text-sm uppercase tracking-wider">
-                  Together with <br /> their families
+    <>
+      <div class="relative mx-auto h-full w-full py-2 drop-shadow-xl sm:px-4 sm:py-4 md:py-12">
+        <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl shadow-lg animate-delay-300 animate-once animate-ease-in-out">
+          <video
+            class="absolute z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
+            autoPlay
+            loop
+            muted
+            playsinline
+            style={{
+              objectFit: "cover",
+            }}
+          >
+            <source src="/public/bg-video.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-sky-50 bg-gradient-to-b from-slate-900/40 to-black/65 drop-shadow-md sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
+          <div class="relative z-10 p-4 sm:p-8">
+            <div class="p-4 lg:p-8">
+              <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
+                {isTurkish ? null : (
+                  <div class="text-sm uppercase tracking-wider">
+                    Together with <br /> their families
+                  </div>
+                )}
+              </div>
+              <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
+                <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
+                  <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Nick</div>
+                  <div class="text-xl md:text-2xl lg:text-3xl">Perez</div>
                 </div>
-              )}
-            </div>
-            <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
-              <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
-                <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Nick</div>
-                <div class="text-xl md:text-2xl lg:text-3xl">Perez</div>
+                <div class="text-shadow-sm font-cursive text-xl font-semibold text-white shadow-slate-950 md:text-3xl lg:text-5xl">
+                  &amp;
+                </div>
+                <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
+                  <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Bensu</div>
+                  <div class="text-xl md:text-2xl lg:text-3xl">Tangil</div>
+                </div>
               </div>
-              <div class="text-shadow-sm font-cursive text-xl font-semibold text-white shadow-slate-950 md:text-3xl lg:text-5xl">
-                &amp;
-              </div>
-              <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
-                <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Bensu</div>
-                <div class="text-xl md:text-2xl lg:text-3xl">Tangil</div>
-              </div>
-            </div>
 
-            <div class="text-center">
-              <div class="my-6 md:my-12">
-                <p class="md:text-md text-shadow-md font-sans text-sm font-semibold uppercase tracking-widest text-white shadow-slate-950">
+              <div class="text-center">
+                <div class="my-6 md:my-12">
+                  <p class="md:text-md text-shadow-md font-sans text-sm font-semibold uppercase tracking-widest text-white shadow-slate-950">
+                    {isTurkish ? (
+                      <>
+                        BU ÖZEL GÜNÜMÜZDE SİZLERİ DE ARAMIZDA <br /> GÖRMEKTEN
+                        MUTLULUK DUYARIZ.
+                      </>
+                    ) : (
+                      <>
+                        Invite you to
+                        <br />
+                        celebrate their wedding
+                      </>
+                    )}
+                  </p>
                   {isTurkish ? (
-                    <>
-                      BU ÖZEL GÜNÜMÜZDE SİZLERİ DE ARAMIZDA <br /> GÖRMEKTEN
-                      MUTLULUK DUYARIZ.
-                    </>
+                    <p class="md:text-md text-shadow-md mt-6 font-sans text-lg font-semibold uppercase tracking-widest text-white shadow-slate-950">
+                      Perez & Tangil AİLELERİ
+                    </p>
+                  ) : null}
+                </div>
+                <div>
+                  {isTurkish ? (
+                    <div class="text-shadow-md font-sans text-4xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
+                      7
+                    </div>
                   ) : (
-                    <>
-                      Invite you to
+                    <div class="text-shadow-md font-sans text-2xl font-medium text-stone-100 shadow-slate-950">
+                      September
+                    </div>
+                  )}
+                  <div class="mx-1 my-2 flex items-center md:mx-16">
+                    <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
+                      {isTurkish ? "Cumartesi" : "Saturday"}
+                    </div>
+
+                    {isTurkish ? (
+                      <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950">
+                        <span class="font-extrabold">Eylül</span>
+                      </div>
+                    ) : (
+                      <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950 md:text-5xl">
+                        <span class="pr-1 font-extrabold">7</span>
+                        <span class="align-top text-lg">th</span>
+                      </div>
+                    )}
+                    <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
+                      {isTurkish ? "saat 19:00" : "at 7:00PM"}
+                    </div>
+                  </div>
+                </div>
+                <div class="text-shadow-md mb-2 font-sans text-lg font-bold tracking-widest text-stone-100 shadow-slate-950">
+                  2024
+                </div>
+                <div class="my-8 md:my-12">
+                  {isTurkish ? (
+                    <a
+                      class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
+                      href="https://www.designplus-hotels.com/tr/seya-beach"
+                    >
+                      SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
                       <br />
-                      celebrate their wedding
-                    </>
-                  )}
-                </p>
-                {isTurkish ? (
-                  <p class="md:text-md text-shadow-md mt-6 font-sans text-lg font-semibold uppercase tracking-widest text-white shadow-slate-950">
-                    Perez & Tangil AİLELERİ
-                  </p>
-                ) : null}
-              </div>
-              <div>
-                {isTurkish ? (
-                  <div class="text-shadow-md font-sans text-4xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
-                    7
-                  </div>
-                ) : (
-                  <div class="text-shadow-md font-sans text-2xl font-medium text-stone-100 shadow-slate-950">
-                    September
-                  </div>
-                )}
-                <div class="mx-1 my-2 flex items-center md:mx-16">
-                  <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
-                    {isTurkish ? "Cumartesi" : "Saturday"}
-                  </div>
-
-                  {isTurkish ? (
-                    <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950">
-                      <span class="font-extrabold">Eylül</span>
-                    </div>
+                      ÇEŞME - İZMİR
+                    </a>
                   ) : (
-                    <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950 md:text-5xl">
-                      <span class="pr-1 font-extrabold">7</span>
-                      <span class="align-top text-lg">th</span>
-                    </div>
+                    <a
+                      class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
+                      href="https://www.designplus-hotels.com/seya-beach"
+                    >
+                      Design Plus Seya Beach Hotel
+                      <br />
+                      Alacati, Turkey
+                    </a>
                   )}
-                  <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
-                    {isTurkish ? "saat 19:00" : "at 7:00PM"}
-                  </div>
+                  <svg
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    height="14"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="2"
+                    viewBox="0 0 64 64"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#FFF"
+                    class="mb-1 ml-1 inline-block"
+                  >
+                    <path d="m-896 0h1280v800h-1280z" fill="none" />
+                    <path d="m36.026 20.058h-21.092c-1.65 0-2.989 1.339-2.989 2.989v25.964c0 1.65 1.339 2.989 2.989 2.989h26.024c1.65 0 2.989-1.339 2.989-2.989v-20.953h3.999v21.948c0 3.308-2.686 5.994-5.995 5.995h-28.01c-3.309 0-5.995-2.687-5.995-5.995v-27.954c0-3.309 2.686-5.995 5.995-5.995h22.085z" />
+                    <path d="m55.925 25.32h-4.005v-10.481l-27.894 27.893-2.832-2.832 27.895-27.895h-10.484v-4.005h17.318l.002.001z" />
+                  </svg>
                 </div>
-              </div>
-              <div class="text-shadow-md mb-2 font-sans text-lg font-bold tracking-widest text-stone-100 shadow-slate-950">
-                2024
-              </div>
-              <div class="my-8 md:my-12">
-                {isTurkish ? (
-                  <a
-                    class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
-                    href="https://www.designplus-hotels.com/tr/seya-beach"
-                  >
-                    SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
-                    <br />
-                    ÇEŞME - İZMİR
-                  </a>
-                ) : (
-                  <a
-                    class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
-                    href="https://www.designplus-hotels.com/seya-beach"
-                  >
-                    Design Plus Seya Beach Hotel
-                    <br />
-                    Alacati, Turkey
-                  </a>
-                )}
-                <svg
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"
-                  height="14"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="2"
-                  viewBox="0 0 64 64"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#FFF"
-                  class="mb-1 ml-1 inline-block"
-                >
-                  <path d="m-896 0h1280v800h-1280z" fill="none" />
-                  <path d="m36.026 20.058h-21.092c-1.65 0-2.989 1.339-2.989 2.989v25.964c0 1.65 1.339 2.989 2.989 2.989h26.024c1.65 0 2.989-1.339 2.989-2.989v-20.953h3.999v21.948c0 3.308-2.686 5.994-5.995 5.995h-28.01c-3.309 0-5.995-2.687-5.995-5.995v-27.954c0-3.309 2.686-5.995 5.995-5.995h22.085z" />
-                  <path d="m55.925 25.32h-4.005v-10.481l-27.894 27.893-2.832-2.832 27.895-27.895h-10.484v-4.005h17.318l.002.001z" />
-                </svg>
-              </div>
-              <div class="my-8 md:my-12">
-                {isTurkish ? (
-                  <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
-                    KOKTEYL 19:00 <br />
-                    YEMEK 20:00
-                  </p>
-                ) : (
-                  <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
-                    Cocktail 7:00pm <br />
-                    Dinner 8:00pm
-                  </p>
-                )}
-              </div>
-              <div class="my-8 md:my-12">
-                {isTurkish ? (
-                  <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
-                    LCV: 25 AĞUSTOS 2024 tarihine kadar <br />
-                    lütfen katılım durumunuzu bildiriniz.
-                  </p>
-                ) : (
-                  <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
-                    RSVP by 25th of August
-                  </p>
-                )}
-                <button
-                  id="rsvp"
-                  class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-900 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                >
-                  {isTurkish ? "LCV" : "RSVP"}
-                </button>
-                <p class="text-md text-shadow-md mt-6 font-sans font-semibold uppercase tracking-wide text-white shadow-slate-950">
+                <div class="my-8 md:my-12">
                   {isTurkish ? (
-                    <a href="tel:5063446904">İletişim: 506 344 69 04</a>
+                    <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
+                      KOKTEYL 19:00 <br />
+                      YEMEK 20:00
+                    </p>
                   ) : (
-                    <a href="tel:7862808903">Contact: (786) 280 8903</a>
+                    <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
+                      Cocktail 7:00pm <br />
+                      Dinner 8:00pm
+                    </p>
                   )}
-                </p>
-                <p class="text-shadow-md mt-6 font-sans text-sm font-semibold tracking-wide text-white shadow-slate-950">
+                </div>
+                <div class="my-8 md:my-12">
                   {isTurkish ? (
-                    <>
-                      Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
-                      ayakkabı giyilmemesini tavsiye ederiz.
-                    </>
+                    <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
+                      LCV: 25 AĞUSTOS 2024 tarihine kadar <br />
+                      lütfen katılım durumunuzu bildiriniz.
+                    </p>
                   ) : (
-                    <>
-                      The wedding will be on a pier. <br /> We recommend to not
-                      wear high heels.
-                    </>
+                    <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
+                      RSVP by 25th of August
+                    </p>
                   )}
-                </p>
+                  <button
+                    id="rsvp"
+                    class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-900 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    {isTurkish ? "LCV" : "RSVP"}
+                  </button>
+                  <p class="text-md text-shadow-md mt-6 font-sans font-semibold uppercase tracking-wide text-white shadow-slate-950">
+                    {isTurkish ? (
+                      <a href="tel:5063446904">İletişim: 506 344 69 04</a>
+                    ) : (
+                      <a href="tel:7862808903">Contact: (786) 280 8903</a>
+                    )}
+                  </p>
+                  <p class="text-shadow-md mt-6 font-sans text-sm font-semibold tracking-wide text-white shadow-slate-950">
+                    {isTurkish ? (
+                      <>
+                        Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
+                        ayakkabı giyilmemesini tavsiye ederiz.
+                      </>
+                    ) : (
+                      <>
+                        The wedding will be on a pier. <br /> We recommend to
+                        not wear high heels.
+                      </>
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -272,7 +274,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
       </div>
       {/* What a hack to get nice highlighting of interactive JS */}
       <script>{html`(${raw(interactivity.toString())})(document, ${isTurkish})`}</script>
-    </div>
+    </>
   );
 };
 
