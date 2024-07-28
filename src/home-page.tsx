@@ -17,10 +17,10 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-black/50 to-black/65"></div>
+        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-black/40 to-black/65"></div>
         <div class="relative z-10 p-4 sm:p-8">
           <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
-            <div class="mb-8 mt-2 text-center font-semibold text-white drop-shadow-md lg:mb-16">
+            <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
               {isTurkish ? null : (
                 <div class="text-sm uppercase tracking-wider">
                   Together with <br /> their families
@@ -28,14 +28,14 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               )}
             </div>
             <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
-              <div class="flex-1 text-center font-cursive font-semibold text-white drop-shadow-md">
+              <div class="text-shadow-md flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
                 <div class="mb-1 text-2xl md:text-3xl lg:text-5xl">Nick</div>
                 <div class="text-lg lg:text-3xl">Perez</div>
               </div>
-              <div class="font-cursive text-xl font-semibold text-white drop-shadow-md md:text-3xl lg:text-5xl">
+              <div class="text-shadow-md font-cursive text-xl font-semibold text-white shadow-slate-950 md:text-3xl lg:text-5xl">
                 &amp;
               </div>
-              <div class="flex-1 text-center font-cursive font-semibold text-white drop-shadow-md">
+              <div class="text-shadow-md flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
                 <div class="mb-1 text-2xl md:text-3xl lg:text-5xl">Bensu</div>
                 <div class="text-lg lg:text-3xl">Tangil</div>
               </div>
@@ -43,7 +43,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
 
             <div class="text-center">
               <div class="my-6 md:my-12">
-                <p class="md:text-md font-sans text-sm font-semibold uppercase tracking-widest text-white drop-shadow-md">
+                <p class="md:text-md text-shadow-md font-sans text-sm font-semibold uppercase tracking-widest text-white shadow-slate-950">
                   {isTurkish ? (
                     <>
                       BU ÖZEL GÜNÜMÜZDE SİZLERİ DE ARAMIZDA <br /> GÖRMEKTEN
@@ -58,48 +58,48 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                   )}
                 </p>
                 {isTurkish ? (
-                  <p class="md:text-md mt-6 font-sans text-lg font-semibold uppercase tracking-widest text-white drop-shadow-md">
+                  <p class="md:text-md text-shadow-md mt-6 font-sans text-lg font-semibold uppercase tracking-widest text-white shadow-slate-950">
                     Perez & Tangil AİLELERİ
                   </p>
                 ) : null}
               </div>
               <div>
                 {isTurkish ? (
-                  <div class="font-serif text-2xl font-extrabold text-stone-100 drop-shadow-md md:text-5xl">
+                  <div class="text-shadow-md font-serif text-2xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
                     7
                   </div>
                 ) : (
-                  <div class="font-serif text-2xl font-medium text-stone-100 drop-shadow-md">
+                  <div class="text-shadow-md font-serif text-2xl font-medium text-stone-100 shadow-slate-950">
                     September
                   </div>
                 )}
                 <div class="mx-1 my-2 flex items-center md:mx-16">
-                  <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
+                  <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
                     {isTurkish ? "Cumartesi" : "Saturday"}
                   </div>
 
                   {isTurkish ? (
-                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md">
+                    <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950">
                       <span class="font-extrabold">Eylül</span>
                     </div>
                   ) : (
-                    <div class="w-24 text-2xl text-stone-100 drop-shadow-md md:text-5xl">
+                    <div class="text-shadow-md w-24 text-2xl text-stone-100 shadow-slate-950 md:text-5xl">
                       <span class="pr-1 font-extrabold">7</span>
                       <span class="align-top text-lg">th</span>
                     </div>
                   )}
-                  <div class="flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 drop-shadow-md md:py-3 md:text-base">
+                  <div class="text-shadow-md flex flex-1 items-center justify-center whitespace-nowrap rounded-sm border-y-2 border-stone-100 py-2 text-sm font-semibold uppercase tracking-wider text-stone-100 shadow-slate-950 md:py-3 md:text-base">
                     {isTurkish ? "saat 19:00" : "at 7:00PM"}
                   </div>
                 </div>
               </div>
-              <div class="mb-2 font-sans text-lg font-bold tracking-widest text-stone-100 drop-shadow-md">
+              <div class="text-shadow-md mb-2 font-sans text-lg font-bold tracking-widest text-stone-100 shadow-slate-950">
                 2024
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
                   <a
-                    class="md:text-md text-md cursor-pointer font-serif font-semibold uppercase text-white underline drop-shadow-md hover:text-sky-100"
+                    class="md:text-md text-md text-shadow-md cursor-pointer font-serif font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
                     href="https://www.designplus-hotels.com/tr/seya-beach"
                   >
                     SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
@@ -108,7 +108,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                   </a>
                 ) : (
                   <a
-                    class="md:text-md text-md cursor-pointer font-serif font-semibold uppercase text-white underline drop-shadow-md hover:text-sky-100"
+                    class="md:text-md text-md text-shadow-md cursor-pointer font-serif font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
                     href="https://www.designplus-hotels.com/seya-beach"
                   >
                     Design Plus Seya Beach Hotel
@@ -135,12 +135,12 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
-                  <p class="font-sans text-sm font-semibold uppercase leading-7 text-white drop-shadow-md md:text-lg">
+                  <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
                     KOKTEYL 19:00 <br />
                     YEMEK 20:00
                   </p>
                 ) : (
-                  <p class="font-sans text-sm font-semibold uppercase leading-7 text-white drop-shadow-md md:text-lg">
+                  <p class="text-shadow-md font-sans text-sm font-semibold uppercase leading-7 text-white shadow-slate-950 md:text-lg">
                     Cocktail 7:00pm <br />
                     Dinner 8:00pm
                   </p>
@@ -148,12 +148,12 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               </div>
               <div class="my-8 md:my-12">
                 {isTurkish ? (
-                  <p class="md:text-md mb-4 font-sans text-sm font-medium uppercase text-white drop-shadow-md">
+                  <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
                     LCV: 25 AĞUSTOS 2024 tarihine kadar <br />
                     lütfen katılım durumunuzu bildiriniz.
                   </p>
                 ) : (
-                  <p class="md:text-md mb-4 font-sans text-sm font-medium uppercase text-white drop-shadow-md">
+                  <p class="md:text-md text-shadow-md mb-4 font-sans text-sm font-medium uppercase text-white shadow-slate-950">
                     RSVP by 25th of August
                   </p>
                 )}
@@ -163,14 +163,14 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 >
                   {isTurkish ? "LCV" : "RSVP"}
                 </button>
-                <p class="text-md mt-6 font-serif font-semibold uppercase tracking-wide text-white drop-shadow-md">
+                <p class="text-md text-shadow-md mt-6 font-serif font-semibold uppercase tracking-wide text-white shadow-slate-950">
                   {isTurkish ? (
                     <a href="tel:5063446904">İletişim: 506 344 69 04</a>
                   ) : (
                     <a href="tel:7862808903">Contact: (786) 280 8903</a>
                   )}
                 </p>
-                <p class="text-md mt-6 font-serif font-semibold tracking-wide text-white drop-shadow-md">
+                <p class="text-md text-shadow-md mt-6 font-serif font-semibold tracking-wide text-white shadow-slate-950">
                   {isTurkish ? (
                     <>
                       Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
