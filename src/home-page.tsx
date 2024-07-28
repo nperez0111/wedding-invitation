@@ -3,7 +3,7 @@ import type { FC } from "hono/jsx";
 
 export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
-    <div class="relative mx-auto w-full py-4 sm:px-4 md:py-12">
+    <div class="relative mx-auto w-full py-2 drop-shadow-xl sm:px-4 sm:py-4 md:py-12">
       <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl shadow-lg animate-delay-300 animate-once animate-ease-in-out">
         <video
           class="absolute z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
@@ -17,7 +17,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-sky-50 bg-gradient-to-b from-slate-900/40 to-black/65 sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
+        <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-sky-50 bg-gradient-to-b from-slate-900/40 to-black/65 drop-shadow-md sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
         <div class="relative z-10 p-4 sm:p-8">
           <div class="p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
@@ -65,7 +65,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               </div>
               <div>
                 {isTurkish ? (
-                  <div class="text-shadow-md font-sans text-2xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
+                  <div class="text-shadow-md font-sans text-4xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
                     7
                   </div>
                 ) : (
