@@ -17,7 +17,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-black/40 to-black/65"></div>
+        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-slate-900/40 to-slate-900/65"></div>
         <div class="relative z-10 p-4 sm:p-8">
           <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
