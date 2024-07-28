@@ -17,9 +17,9 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-slate-900/40 to-black/65"></div>
+        <div class="absolute inset-0 bottom-4 left-4 right-4 top-4 z-0 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black/65 sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
         <div class="relative z-10 p-4 sm:p-8">
-          <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
+          <div class="rounded-2xl border-2 border-sky-50 p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
               {isTurkish ? null : (
                 <div class="text-sm uppercase tracking-wider">
@@ -65,11 +65,11 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               </div>
               <div>
                 {isTurkish ? (
-                  <div class="text-shadow-md font-serif text-2xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
+                  <div class="text-shadow-md font-sans text-2xl font-extrabold text-stone-100 shadow-slate-950 md:text-5xl">
                     7
                   </div>
                 ) : (
-                  <div class="text-shadow-md font-serif text-2xl font-medium text-stone-100 shadow-slate-950">
+                  <div class="text-shadow-md font-sans text-2xl font-medium text-stone-100 shadow-slate-950">
                     September
                   </div>
                 )}
@@ -99,7 +99,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               <div class="my-8 md:my-12">
                 {isTurkish ? (
                   <a
-                    class="md:text-md text-md text-shadow-md cursor-pointer font-serif font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
+                    class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
                     href="https://www.designplus-hotels.com/tr/seya-beach"
                   >
                     SEYA BEACH HOTEL&nbsp;&nbsp;ALAÇATI
@@ -108,7 +108,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                   </a>
                 ) : (
                   <a
-                    class="md:text-md text-md text-shadow-md cursor-pointer font-serif font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
+                    class="md:text-md text-md text-shadow-md cursor-pointer font-sans font-semibold uppercase text-white underline shadow-slate-950 hover:text-sky-100"
                     href="https://www.designplus-hotels.com/seya-beach"
                   >
                     Design Plus Seya Beach Hotel
@@ -163,14 +163,14 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 >
                   {isTurkish ? "LCV" : "RSVP"}
                 </button>
-                <p class="text-md text-shadow-md mt-6 font-serif font-semibold uppercase tracking-wide text-white shadow-slate-950">
+                <p class="text-md text-shadow-md mt-6 font-sans font-semibold uppercase tracking-wide text-white shadow-slate-950">
                   {isTurkish ? (
                     <a href="tel:5063446904">İletişim: 506 344 69 04</a>
                   ) : (
                     <a href="tel:7862808903">Contact: (786) 280 8903</a>
                   )}
                 </p>
-                <p class="text-md text-shadow-md mt-6 font-serif font-semibold tracking-wide text-white shadow-slate-950">
+                <p class="text-md text-shadow-md mt-6 font-sans font-semibold tracking-wide text-white shadow-slate-950">
                   {isTurkish ? (
                     <>
                       Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
