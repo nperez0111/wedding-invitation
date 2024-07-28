@@ -6,7 +6,6 @@ import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import type { FC } from "hono/jsx";
 import { html, raw } from "hono/html";
-import Bun from "bun";
 
 import { HomePage } from "./home-page";
 
