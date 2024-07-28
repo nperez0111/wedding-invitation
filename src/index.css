@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply bg-sky-100;
+html, body {
+  @apply bg-sky-100 h-full;
 }

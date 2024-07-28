@@ -3,7 +3,7 @@ import type { FC } from "hono/jsx";
 
 export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
-    <div class="relative mx-auto w-full py-2 drop-shadow-xl sm:px-4 sm:py-4 md:py-12">
+    <div class="relative mx-auto h-full w-full py-2 drop-shadow-xl sm:px-4 sm:py-4 md:py-12">
       <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl shadow-lg animate-delay-300 animate-once animate-ease-in-out">
         <video
           class="absolute z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
