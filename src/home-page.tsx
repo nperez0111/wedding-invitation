@@ -4,7 +4,7 @@ import type { FC } from "hono/jsx";
 export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
   return (
     <div class="relative mx-auto w-full p-1 py-4 sm:px-4 md:py-12">
-      <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl border-2 border-white shadow-lg animate-delay-300 animate-once animate-ease-in-out">
+      <div class="relative mx-auto max-w-[700px] animate-fade-up cursor-default rounded-3xl shadow-lg animate-delay-300 animate-once animate-ease-in-out">
         <video
           class="absolute z-0 h-full w-full rounded-3xl bg-sky-100 opacity-[90%] shadow-lg"
           autoPlay
@@ -17,9 +17,9 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bottom-9 left-9 right-9 top-9 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-slate-900/40 to-slate-900/65"></div>
+        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-black/40 to-black/65"></div>
         <div class="relative z-10 p-4 sm:p-8">
-          <div class="p-4 lg:p-8">
+          <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
               {isTurkish ? null : (
                 <div class="text-sm uppercase tracking-wider">
