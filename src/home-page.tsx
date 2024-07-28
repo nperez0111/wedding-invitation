@@ -17,9 +17,9 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bottom-4 left-4 right-4 top-4 z-0 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black/65 sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
+        <div class="absolute inset-0 bottom-4 left-4 right-4 top-4 z-0 rounded-2xl border-2 border-sky-50 bg-gradient-to-b from-slate-900/40 to-black/65 sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
         <div class="relative z-10 p-4 sm:p-8">
-          <div class="rounded-2xl border-2 border-sky-50 p-4 lg:p-8">
+          <div class="p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
               {isTurkish ? null : (
                 <div class="text-sm uppercase tracking-wider">
@@ -170,7 +170,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     <a href="tel:7862808903">Contact: (786) 280 8903</a>
                   )}
                 </p>
-                <p class="text-md text-shadow-md mt-6 font-sans font-semibold tracking-wide text-white shadow-slate-950">
+                <p class="text-shadow-md mt-6 font-sans text-sm font-semibold tracking-wide text-white shadow-slate-950">
                   {isTurkish ? (
                     <>
                       Düğünümüz iskele üzerinde olacaktır. <br /> İnce topuklu
@@ -178,8 +178,8 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                     </>
                   ) : (
                     <>
-                      The wedding will be on a pier. <br /> We recommend that
-                      you do not wear high heels.
+                      The wedding will be on a pier. <br /> We recommend to not
+                      wear high heels.
                     </>
                   )}
                 </p>
