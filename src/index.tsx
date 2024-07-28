@@ -5,7 +5,8 @@ import type { Database } from "bun:sqlite";
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import type { FC } from "hono/jsx";
-import { html } from "hono/html";
+import { html, raw } from "hono/html";
+import Bun from "bun";
 
 import { HomePage } from "./home-page";
 
@@ -26,7 +27,7 @@ const query = db.prepare<RSVP, any[]>("select * from rsvps;");
 
 const app = new Hono();
 const time = new Date().toISOString();
-
+const cssFileContent = await Bun.file("./public/output.css").text();
 export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
   html`<!doctype html>
     <html lang="${props.isTurkish ? "tr" : "en"}">
@@ -55,8 +56,6 @@ export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
         <link rel="icon" type="image/svg+xml" href="/public/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nick & Bensu's Wedding</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="/public/output.css?refresh=${time}" rel="stylesheet" />
         <style>
           /* fallback */
           @font-face {
@@ -64,8 +63,11 @@ export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
             font-style: normal;
             font-weight: 100 400;
             font-display: swap;
-            src: url(https://fonts.gstatic.com/s/playwriteautas/v4/Gfte7u9QuxsdI_QuuctXue3ElxxmahjVfMW1.woff2)
-              format("woff2");
+            src: url(/public/font.woff2) format("woff2");
+          }
+          ${
+            // Inlining the CSS saves a network request
+            raw(cssFileContent)
           }
         </style>
         ${process.env.NODE_ENV === "development"
@@ -127,6 +129,10 @@ app.use(
     rewriteRequestPath: (path) => path.replace(/^\/static/, "./public"),
     mimes: {
       css: "text/css",
+      svg: "image/svg+xml",
+      jpg: "image/jpeg",
+      mp4: "video/mp4",
+      woff2: "font/woff2",
     },
   }),
 );
