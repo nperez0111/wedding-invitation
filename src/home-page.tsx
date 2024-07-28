@@ -17,7 +17,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
         >
           <source src="/public/bg-video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-slate-900/40 to-slate-900/65"></div>
+        <div class="absolute inset-0 z-0 rounded-2xl border-4 border-white bg-gradient-to-b from-slate-900/40 to-black/65"></div>
         <div class="relative z-10 p-4 sm:p-8">
           <div class="rounded-2xl border-4 border-sky-50 p-4 lg:p-8">
             <div class="text-shadow-md mb-8 mt-2 text-center font-semibold text-white shadow-slate-950 lg:mb-16">
@@ -28,16 +28,16 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
               )}
             </div>
             <div class="mb-8 flex w-full items-center gap-3 px-2 md:px-10 lg:gap-10">
-              <div class="text-shadow-md flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
-                <div class="mb-1 text-2xl md:text-3xl lg:text-5xl">Nick</div>
-                <div class="text-lg lg:text-3xl">Perez</div>
+              <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
+                <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Nick</div>
+                <div class="text-xl md:text-2xl lg:text-3xl">Perez</div>
               </div>
-              <div class="text-shadow-md font-cursive text-xl font-semibold text-white shadow-slate-950 md:text-3xl lg:text-5xl">
+              <div class="text-shadow-sm font-cursive text-xl font-semibold text-white shadow-slate-950 md:text-3xl lg:text-5xl">
                 &amp;
               </div>
-              <div class="text-shadow-md flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
-                <div class="mb-1 text-2xl md:text-3xl lg:text-5xl">Bensu</div>
-                <div class="text-lg lg:text-3xl">Tangil</div>
+              <div class="text-shadow-sm flex-1 text-center font-cursive font-semibold text-white shadow-slate-950">
+                <div class="mb-1 text-3xl sm:text-4xl md:text-5xl">Bensu</div>
+                <div class="text-xl md:text-2xl lg:text-3xl">Tangil</div>
               </div>
             </div>
 
@@ -159,7 +159,7 @@ export const HomePage: FC<{ isTurkish: boolean }> = ({ isTurkish }) => {
                 )}
                 <button
                   id="rsvp"
-                  class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-600 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-900 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-50/40 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                 >
                   {isTurkish ? "LCV" : "RSVP"}
                 </button>
