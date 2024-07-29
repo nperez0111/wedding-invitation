@@ -138,18 +138,16 @@ app.use(
 
 app.post("/rsvp", async (c) => {
   const time = new Date().toISOString();
-  const name = (await c.req.formData()).get("name");
+  const names = (await c.req.formData()).getAll("name");
 
   const acceptLanguage = c.req.header("Accept-Language");
   const turkishLang = c.req.query("lang") === "tr";
   const isTurkish =
     Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
 
-  const names = Array.isArray(name) ? name : [name];
-
   names.forEach((name) => {
     insertRsvp.run({
-      $name: name,
+      $name: name.toString(),
       $createdAt: time,
     });
   });
