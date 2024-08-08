@@ -6,6 +6,7 @@ import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import type { FC } from "hono/jsx";
 import { html, raw } from "hono/html";
+import { prettyJSON } from "hono/pretty-json";
 
 import { HomePage } from "./home-page";
 
@@ -25,6 +26,8 @@ const insertRsvp = db.prepare<
 const query = db.prepare<RSVP, any[]>("select * from rsvps;");
 
 const app = new Hono();
+app.use(prettyJSON());
+
 const time = new Date().toISOString();
 const cssFileContent = await Bun.file("./public/output.css").text();
 export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
