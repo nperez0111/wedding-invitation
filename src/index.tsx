@@ -141,7 +141,7 @@ app.use(
 
 app.post("/rsvp", async (c) => {
   const time = new Date().toISOString();
-  const names = (await c.req.formData()).getAll("name");
+  const names = (await c.req.formData()).getAll("name[]");
 
   const acceptLanguage = c.req.header("Accept-Language");
   const turkishLang = c.req.query("lang") === "tr";
@@ -149,6 +149,7 @@ app.post("/rsvp", async (c) => {
     Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
 
   names.forEach((name) => {
+    console.log(name);
     insertRsvp.run({
       $name: name.toString(),
       $createdAt: time,
@@ -176,7 +177,7 @@ app.post("/rsvp", async (c) => {
               <div class="my-1 text-center text-xl font-semibold text-slate-800 drop-shadow-md">
                 {isTurkish
                   ? "Teşekkür ederiz! Düğünde görüşmek üzere!"
-                  : "We can't wait to celebrate with you!"}
+                  : `So, sorry to make you submit the form again, but we got it this time! Thank you for RSVPing ${names.join(", ")}`}
               </div>
             </div>
           </div>
