@@ -192,7 +192,21 @@ app.post("/rsvp", async (c) => {
 
 app.get("/api/rsvps", async (c) => {
   const rsvps = await query.all();
-  return c.json(rsvps);
+  const json = c.req.query("json") === "true";
+
+  if (json) {
+    return c.json(rsvps);
+  }
+
+  return c.html(
+    <Layout isTurkish={false}>
+      <div class="text-center text-xl font-semibold text-slate-800">
+        {rsvps.map((rsvp) => (
+          <div title={rsvp.createdAt}>{rsvp.name}</div>
+        ))}
+      </div>
+    </Layout>,
+  );
 });
 
 console.log("Server starting on port 2500");
