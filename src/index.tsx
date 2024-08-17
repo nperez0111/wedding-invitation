@@ -119,8 +119,8 @@ const EnglishRegistry = (
   <Layout isTurkish={false}>
     <HomePage isTurkish={true}>
       <>
-        <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-slate-800 bg-sky-50 drop-shadow-md sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
-        <div class="relative z-10 min-h-80 p-8 sm:p-8">
+        <div class="absolute inset-0 bottom-10 left-10 right-10 top-10 z-0 rounded-2xl border-2 border-slate-800 bg-sky-50 drop-shadow-md"></div>
+        <div class="relative z-10 min-h-80 p-12">
           <h1 class="mb-4 text-center text-3xl font-semibold text-slate-800">
             Registry
           </h1>
