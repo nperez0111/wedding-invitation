@@ -115,6 +115,51 @@ const EnglishPage = (
   </Layout>
 );
 
+const EnglishRegistry = (
+  <Layout isTurkish={false}>
+    <HomePage isTurkish={true}>
+      <>
+        <div class="absolute inset-0 bottom-6 left-6 right-6 top-6 z-0 rounded-2xl border-2 border-slate-800 bg-sky-50 drop-shadow-md sm:bottom-9 sm:left-9 sm:right-9 sm:top-9"></div>
+        <div class="relative z-10 min-h-80 p-4 sm:p-8">
+          <h1 class="mb-4 text-center text-3xl font-semibold text-slate-800">
+            Registry
+          </h1>
+          <p class="text-lg text-slate-800">
+            Your presence is enough of a present to us! <br /> <br />
+            But for those of you who are stubborn, we've put together some ways
+            that you can contribute to our wedding.
+          </p>
+
+          <div class="mt-48 flex items-center justify-center gap-3">
+            <a
+              href="https://venmo.com/u/nickthesick"
+              class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-900 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-200/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+            >
+              <img src="/public/venmo.ico" class="inline-block h-4 w-4"></img>
+              &nbsp;Venmo
+            </a>
+            <br />
+            <a
+              href="https://paypal.me/nickthesick"
+              class="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-slate-900 bg-sky-50 px-10 py-2 text-sm font-bold tracking-widest text-stone-900 shadow drop-shadow-md transition-colors hover:scale-105 hover:bg-sky-200/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+            >
+              <img src="/public/paypal.ico" class="inline-block h-4 w-4"></img>
+              &nbsp;Paypal
+            </a>
+            <div class="flex items-center gap-4">
+              <img src="/public/zelle.ico" class="inline-block h-4 w-4"></img>{" "}
+              <p class="">
+                Or via Zelle @ <br />
+                305 282 8358
+              </p>
+            </div>
+          </div>
+        </div>
+      </>
+    </HomePage>
+  </Layout>
+);
+
 app.get("/", (c) => {
   const acceptLanguage = c.req.header("Accept-Language");
   const turkishLang = c.req.query("lang") === "tr";
@@ -122,6 +167,10 @@ app.get("/", (c) => {
     Boolean(acceptLanguage && acceptLanguage.includes("tr")) || turkishLang;
 
   return c.html(isTurkish ? TurkishPage : EnglishPage);
+});
+
+app.get("/registry", (c) => {
+  return c.html(EnglishRegistry);
 });
 
 app.use(
