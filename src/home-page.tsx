@@ -179,9 +179,9 @@ export const HomePage: FC<{
                       </button>
                       <p class="text-md mt-6 font-sans font-semibold uppercase tracking-wide text-white shadow-slate-950 text-shadow-md">
                         {isTurkish ? (
-                          <a href="tel:5063446904">İletişim: 506 344 69 04</a>
+                          <a href="tel:1234567890">İletişim: 123 456 78 90</a>
                         ) : (
-                          <a href="tel:7862808903">Contact: (786) 280 8903</a>
+                          <a href="tel:1234567890">Contact: (123) 456 7890</a>
                         )}
                       </p>
                       <p class="mt-6 font-sans text-sm font-semibold tracking-wide text-white shadow-slate-950 text-shadow-md">

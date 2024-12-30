@@ -32,41 +32,47 @@ const time = new Date().toISOString();
 const cssFileContent = await Bun.file("./public/output.css").text();
 export const Layout: FC<{ isTurkish: boolean; children: any }> = (props) =>
   html`<!doctype html>
-    <html lang="${props.isTurkish ? "tr" : "en"}">
+    <html lang="en">
       <head>
         <meta charset="UTF-8" />
-        <meta property="og:url" content="https://wedding.nickthesick.com" />
+        <meta
+          property="og:url"
+          content="https://betterreader.nickthesick.com"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bensu & Nick's Wedding" />
+        <meta property="og:title" content="Better Reader" />
         <meta
           property="og:description"
-          content="RSVP to Bensu & Nick's wedding"
+          content="Goodreads but better. Built on top of Blue Sky."
         />
         <meta property="og:image" content="/public/preview.jpg" />
         <meta name="twitter:card" content="/public/preview.jpg" />
-        <meta property="twitter:domain" content="wedding.nickthesick.com" />
+        <meta
+          property="twitter:domain"
+          content="betterreader.nickthesick.com"
+        />
         <meta
           property="twitter:url"
-          content="https://wedding.nickthesick.com"
+          content="https://betterreader.nickthesick.com"
         />
-        <meta name="twitter:title" content="Bensu & Nick's Wedding" />
+        <meta name="twitter:title" content="Better Reader" />
         <meta
           name="twitter:description"
-          content="RSVP to Bensu & Nick's wedding"
+          content="Goodreads but better. Built on top of Blue Sky."
         />
         <meta name="twitter:image" content="/public/preview.jpg" />
         <link rel="icon" type="image/svg+xml" href="/public/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Nick & Bensu's Wedding</title>
+        <title>Better Reader</title>
         <style>
-          /* fallback */
-          @font-face {
-            font-family: "Playwrite AU TAS";
-            font-style: normal;
-            font-weight: 100 400;
-            font-display: swap;
-            src: url(/public/font.woff2) format("woff2");
-          }
+          // /* fallback */
+          // @font-face {
+          //   font-family: "Playwrite AU TAS";
+          //   font-style: normal;
+          //   font-weight: 100 400;
+          //   font-display: swap;
+          //   src: url(/public/font.woff2) format("woff2");
+          // }
           ${
             // Inlining the CSS saves a network request
             raw(cssFileContent)

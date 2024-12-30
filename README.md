@@ -1,13 +1,14 @@
-# Bun + Hono + TailwindCSS
+# Wedding Website
 
-This is a simple project that uses [Bun](https://bun.sh) and [Hono](https://hono.dev) to generate a static site with TailwindCSS.
+![Screenshot](./images/screenshot.png)
 
-## Getting Started
+This is a wedding website for my wedding. It is a static website built with Bun, Hono, and Tailwind CSS.
 
-1. Clone this repository
-2. Run `bun install` to install the dependencies
-3. Run `bun dev` to start the development server
+See it live as [https://wedding.nickthesick.com](https://wedding.nickthesick.com).
 
-## License
+Features:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Translations for English and Turkish
+- SSR for fastest possible load times (~30k rq/s)
+- Responsive design
+- Video background
